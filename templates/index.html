@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google</title>
-</head>
-
-<body>
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center my-3">
     <h1>Google</h1>
+</div>
+<div class="container text-center">
     <form method="POST" action="search">
         {% csrf_token %}
         <input type="text" name="search">
+        <br><br>
         <button type="submit">Google Search</button>
         <button type="submit">I'm Feeling Lucky</button>
     </form>
-</body>
-
-</html>
+</div>
+{% endblock content %}

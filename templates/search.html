@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google</title>
-</head>
-
-<body>
-    {% if final_result %}
+{% extends "base.html" %}
+{% block content %}
+{% if final_result %}
+<div class="container text-center my-2">
     <h2>Search Results</h2>
-    {% for result in final_result %}
-    <div>
-        <h3><a href="{{result.1}}">{{result.0}}</a></h3>
-        <a href="{{result.1}}">{{result.1}}</a>
-        <h3>{{result.2}}</h3>
-    </div>
-    <br>
-    {% endfor %}
-    {% endif %}
-</body>
-
-</html>
+</div>
+{% for result in final_result %}
+<div class="container">
+    <a href="{{result.1}}" class="link" style="color: black">{{result.1}}</a>
+    <h4><a href="{{result.1}}" class="link" style="color: blue">{{result.0}}</a></h4>
+    <p>{{result.2}}</p>
+</div>
+<br>
+{% endfor %}
+{% endif %}
+{% endblock content %}
+<a href=""></a>
