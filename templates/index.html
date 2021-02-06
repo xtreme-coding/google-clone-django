@@ -9,8 +9,9 @@
 
 <body>
     <h1>Google</h1>
-    <form method="POST" action="">
-        <input type="text">
+    <form method="POST" action="search">
+        {% csrf_token %}
+        <input type="text" name="search">
         <button type="submit">Google Search</button>
         <button type="submit">I'm Feeling Lucky</button>
     </form>
